@@ -1,0 +1,82 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{ctex}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{longtable}
+\usepackage{subcaption}
+\usepackage[colorlinks, hyperfootnotes = false]{hyperref}
+
+\def\docTitle{一份\LaTeX 学习总结}
+
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\headwidth}{16cm}
+\pagestyle{fancy}
+\chead{}
+\rhead{\docTitle}
+\lhead{\href{https://github.com/zuo15954383703/-LaTeX-}{https://github.com/zuo15954383703/-LaTeX-}}
+\cfoot{\thepage}
+
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}							% 设置段落的缩进为 2em，即段落开头缩进 2 个字符宽度。	
+\linespread{1.2}	
+
+\usepackage{fontspec}
+\setCJKfamilyfont{Hei}{黑体}
+\setCJKfamilyfont{Song}{宋体}
+\setCJKfamilyfont{Kai}{楷体}
+\newcommand{\Hei}{\CJKfamily{黑体}}
+\newcommand{\Song}{\CJKfamily{宋体}}
+\newcommand{\Kai}{\CJKfamily{楷体}}
+\setCJKmainfont{宋体}
+
+\newfontfamily{\TimesNewRoman}{Times New Roman}	% 导入本地Times New Roman字体
+\setmainfont{Times New Roman}
+\newcommand\resetfont{\Song \TimesNewRoman}	
+
+\usepackage{amsmath,algorithm2e,subcaption,titlesec,listings,nomencl}
+% 编号跟随：使得各类标题随着章节变动而重置计数器
+\numberwithin{section}{part}
+\numberwithin{footnote}{part}
+\numberwithin{table}{part}
+\numberwithin{figure}{part}
+\numberwithin{algocf}{part}
+% 编号样式和内容
+\renewcommand{\thepart}{\Roman{part}}
+\renewcommand{\thesection}{\arabic{part}.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thefigure}{\arabic{part}.\arabic{figure}}
+\renewcommand{\thesubfigure}{\alph{subfigure}}
+\renewcommand{\thetable}{\arabic{part}.\arabic{table}}
+\renewcommand{\thesubtable}{\alph{subtable}}
+% 显示样式和内容
+\titleformat{\part}{\centering \zihao{-3} \Hei \TimesNewRoman}{第 \thepart 部分}{1em}{}
+\titleformat{\section}{\zihao{4} \Hei \TimesNewRoman}{\thesection}{1em}{}
+\titleformat{\subsection}{\zihao{-4} \Hei \TimesNewRoman}{\thesubsection}{1em}{}
+\titlespacing{\subsection}{2em}{*1}{*1}
+\renewcommand{\tablename}{\Hei 表}
+\renewcommand{\figurename}{\Hei 图}
+
+\usepackage{titletoc}			
+\setcounter{tocdepth}{2}
+% \titlecontents{章节名称}[左端距离]{标题字体、与上文间距等}{标题序号}{空}{引导符和页码}[与下文间距]
+\titlecontents{part}[0em]{\Hei \TimesNewRoman \vspace{5pt}}{\contentslabel{2em}}{}{~\titlerule*[0.6pc]{\textbullet}~\contentspage}
+\titlecontents{section}[3em]{\Hei \TimesNewRoman}{\contentslabel{2em}}{}{~\titlerule*[0.6pc]{\textbullet}~\contentspage}
+\titlecontents{subsection}[6em]{\Hei \TimesNewRoman}{\contentslabel{2em}}{}{~\titlerule*[0.6pc]{\textbullet}~\contentspage}
+
+\usepackage{array,multirow,multicol}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\newcommand\addbs[1]{\textbackslash #1} %% bs表示backslash，反斜杠
+\newcommand\textlb{\textbackslash \textbackslash} %% lb表示line break，换行
+
+
+
+

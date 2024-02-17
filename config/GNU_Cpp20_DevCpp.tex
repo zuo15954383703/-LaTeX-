@@ -1,0 +1,28 @@
+%%% Tips: C++20关键字：alignas, alignof, and, and_eq, asm, atomic_cancel, atomic_commit, atomic_noexcept, auto, bitand, bitor, bool, break, case, catch, char, char8_t, char16_t, char32_t, class, compl, concept, const, consteval, constexpr, constinit, const_cast, continue, co_await, co_return, co_yield, decltype, default, delete, do, double, dynamic_cast, else, enum, explicit, export, extern, false, float, for, friend, goto, if, inline, int, long, mutable, namespace, new, noexcept, not, not_eq, nullptr, operator, or, or_eq, private, protected, public, reflexpr, register, reinterpret_cast, requires, return, short, signed, sizeof, static, static_assert, static_cast, struct, switch, synchronized, template, this, thread_local, throw, true, try, typedef, typeid, typename, union, unsigned, using, virtual, void, volatile, wchar_t, while, xor, xor_eq
+%%% 宏在morekeywords里不起作用，似乎是所有控制序列都被转义了
+\lstdefinelanguage[ISO]{C++20}{language = [ISO]C++, morekeywords = {alignas, alignof, atomic_cancel, atomic_commit, atomic_noexcept, char8_t, char16_t, char32_t, concept, consteval, constexpr, constinit, co_await, co_return, co_yield, decltype, noexcept, nullptr, reflexpr, requires, static_assert, synchronized, thread_local}}
+\lstdefinelanguage[GNU]{C++20}{language = [GNU]C++, morekeywords = {alignas, alignof, atomic_cancel, atomic_commit, atomic_noexcept, char8_t, char16_t, char32_t, concept, consteval, constexpr, constinit, co_await, co_return, co_yield, decltype, noexcept, nullptr, reflexpr, requires, static_assert, synchronized, thread_local}}
+\lstdefinelanguage[ANSI]{C++20}{language = [ANSI]C++, morekeywords = {alignas, alignof, atomic_cancel, atomic_commit, atomic_noexcept, char8_t, char16_t, char32_t, concept, consteval, constexpr, constinit, co_await, co_return, co_yield, decltype, noexcept, nullptr, reflexpr, requires, static_assert, synchronized, thread_local}}
+\lstdefinelanguage[Visual]{C++20}{language = [Visual]C++, morekeywords = {alignas, alignof, atomic_cancel, atomic_commit, atomic_noexcept, char8_t, char16_t, char32_t, concept, consteval, constexpr, constinit, co_await, co_return, co_yield, decltype, noexcept, nullptr, reflexpr, requires, static_assert, synchronized, thread_local}}
+%% C++20语法高亮
+\lstdefinestyle{GNU_Cpp20_DevCpp}{
+	language = [GNU]C++20,
+	captionpos = b,
+	tabsize = 4,
+	breaklines = true,
+	showspaces = false,
+	showtabs = false,
+	frame = none,
+	backgroundcolor = \color{bgcolor_gray},
+	basicstyle = \CourierNew \SimSun,
+	keywordstyle = \color{black} \bf,
+	identifierstyle = \color{blue!50},
+	commentstyle = \color{deep_green},
+	numbers = left,
+	numberstyle = \small,
+	stepnumber = 1,
+	firstnumber = 1,
+	extendedchars = true,
+	inputencoding = utf8,
+	escapeinside={(@*}{*@)}
+}

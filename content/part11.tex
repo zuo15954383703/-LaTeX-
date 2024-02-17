@@ -1,0 +1,15 @@
+\part{公式编辑}
+\begin{lstlisting}[style = LaTeX_TeXworks]
+\usepackage{amsthm}
+\newtheoremstyle{Chinese_mathenv}{3pt}{3pt}{\KaiTi}{}{\SimHei \TimesNewRoman}{ }{.5em}{}
+\theoremstyle{Chinese_mathenv}
+\newtheorem{axiom}{公理}[section]
+\newtheorem{theorem}{定理}[section]
+\newtheorem{corollary}{推论}[axiom]
+\newtheorem{definition}{定义}[section]
+\newtheorem{lemma}{引理}[theorem]
+\newtheorem*{caution}{注意}
+\newtheorem*{solve}{解}
+\newtheorem*{solution}{方案}
+\end{lstlisting}
+其他部分的编辑与Markdown极度相似，因此本文便不再赘述。详见\href{https://blog.csdn.net/weixin_46390192/article/details/133612181}{给自己看的Markdown语法大全}

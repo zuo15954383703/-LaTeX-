@@ -1,0 +1,53 @@
+\part{目录、标题和标签}
+\section{目录设置}
+\begin{lstlisting}[style = LaTeX_TeXworks]
+\usepackage{titletoc}			
+\setcounter{tocdepth}{2}
+% \titlecontents{章节名称}[左端距离]{标题字体、与上文间距等}{标题序号}{空}{引导符和页码}[与下文间距]
+\titlecontents{part}[0em]{\SimHei \TimesNewRoman \vspace{5pt}}{\contentslabel{2em}}{}{~\titlerule*[0.6pc]{\textbullet}~\contentspage}
+\titlecontents{section}[3em]{\SimHei \TimesNewRoman}{\contentslabel{2em}}{}{~\titlerule*[0.6pc]{.}~\contentspage}
+\titlecontents{subsection}[4em]{\SimHei \TimesNewRoman}{\contentslabel{3em}}{}{~\titlerule*[0.6pc]{.}~\contentspage}
+\titlecontents{subsubsection}[5em]{\SimHei \TimesNewRoman}{\contentslabel{2em}}{}{~\titlerule*[0.6pc]{.}~\contentspage}
+\end{lstlisting}
+\section{标题设置}
+\begin{lstlisting}[style = LaTeX_TeXworks]
+\usepackage{amsmath,algorithm2e,subcaption,titlesec,listings,nomencl}
+% 编号跟随：使得各类标题随着章节变动而重置计数器
+\numberwithin{section}{part}
+\numberwithin{footnote}{part}
+\numberwithin{table}{part}
+\numberwithin{figure}{part}
+\numberwithin{algocf}{part}
+% 编号样式和内容
+\renewcommand{\thealgocf}{\arabic{part}.\arabic{algocf}}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\renewcommand{\thepart}{\Roman{part}}
+\renewcommand{\thesection}{\arabic{part}.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+\renewcommand{\thefigure}{\arabic{part}.\arabic{figure}}
+\renewcommand{\thesubfigure}{\alph{subfigure}}
+\renewcommand{\thetable}{\arabic{part}.\arabic{table}}
+\renewcommand{\thesubtable}{\alph{subtable}}
+% 显示样式和内容
+\titleformat{\part}{\raggedright \zihao{-3} \SimHei \TimesNewRoman}{第 \thepart 部分}{1em}{}[]
+\titleformat{\section}{\zihao{-4} \SimHei \TimesNewRoman}{\thesection}{1em}{}
+\titlespacing{\section}{3cm}{*1}{*1}
+\titleformat{\subsection}{\large \SimHei \TimesNewRoman}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\SimHei \TimesNewRoman}{\thesubsubsection}{1em}{}
+\renewcommand{\proofname}{\bf \SimHei 证明}
+\renewcommand{\contentsname}{\bf \SimHei 目录}
+\renewcommand{\lstlistingname}{\SimHei 代码}
+\renewcommand{\tablename}{\SimHei 表}
+\renewcommand{\figurename}{\SimHei 图}
+\renewcommand{\listalgorithmcfname}{\SimHei 算法列表}
+\renewcommand{\algorithmcfname}{\SimHei 算法}
+\renewcommand\nomname{术语表}
+\end{lstlisting}
+\section{标签与跳转}
+\begin{lstlisting}[style = LaTeX_TeXworks]
+标签\label{content::label}
+\caption{图片}\label{figure::figure}	
+\caption{table}\label{tabel::tabel}	
+\ref{figure::figure}				% 用于后文中的标签跳转
+\end{lstlisting}

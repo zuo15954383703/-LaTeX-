@@ -1,0 +1,45 @@
+\part{常见环境介绍}
+\begin{lstlisting}[style = LaTeX_TeXworks]
+% 正文区（唯一）
+\begin{document}
+\end{document}
+
+% 图标区
+\begin{figure}[H]
+\end{figure}
+
+% 表格区
+\begin{table}[H]
+\end{table}
+
+% 标题页
+\begin{titlepage}
+\end{titlepage}
+
+% 也是表格区
+\begin{tabular}
+\end{tabular}
+
+% 长表格
+\begin{longtable}
+\end{longtable}
+
+% 左对齐
+\begin{flushleft}
+\end{flushleft}
+
+% 居中
+\begin{center}
+\end{center}
+
+% 右对齐
+\begin{flushright}
+\end{flushright}
+
+% 自定义区
+\begin{<自定义的环境名称>}
+\end{<自定义的环境名称>}
+
+\end{lstlisting}
+
+值得注意的是，环境是可以自己定义的，比如\addbs{def}和amsthm宏包中的\addbs{newtheorem}命令都可以定义新的环境。

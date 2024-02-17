@@ -1,0 +1,35 @@
+\part{页面与页眉页脚}
+\section{页面设置}
+\begin{lstlisting}[style = LaTeX_TeXworks]
+\documentclass[a4paper]{article}	% 设置纸张大小未A4纸张
+\usepackage{geometry}				% 导入页面格式设置的代码
+% 下面是两种设置页边距的方式
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\geometry{margin=2.5cm}
+\end{lstlisting}
+\section{页眉页脚设置}
+\begin{lstlisting}[style = LaTeX_TeXworks]
+\usepackage{fancyhdr}				% 自定义设置页眉页脚的宏包
+\footskip = 10pt					% 设置页脚边距
+\renewcommand{\headrulewidth}{1pt}	% 设置页眉线的宽度
+\renewcommand{\headwidth}{16cm}		% 设置页眉线的长度
+\pagestyle{fancy}					% 将全局页眉页脚设置为fancy格式
+\thispagestyle{empty}				% 删除该页的页眉页脚
+\lhead{一份学习文档}					% 设置页眉左侧
+\chead{nihao}						% 设置页眉中间
+\rhead{我不知道写啥}					% 设置页眉右侧
+\cfoot{\thepage}					% 设置页脚中间（\thepage表示当前页码）
+\rfoot{}							% 设置页脚右侧
+\lfoot{}							% 设置页脚左侧
+\end{lstlisting}
+值得注意的是，页眉页脚的格式在\LaTeX 中共存在四种模式：
+\begin{enumerate}
+	\item 
+	empty:页面不显示页眉页脚。
+	\item
+	plain：页面显示页脚，但页眉为空。
+	\item
+	headings：页面显示页眉和页脚，页眉中包含章节标题或节标题。
+	\item
+	fancy：这是导入fancyhdr宏包后可以使用的格式，即自定义页眉页脚。
+\end{enumerate}

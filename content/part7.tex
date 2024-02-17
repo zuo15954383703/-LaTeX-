@@ -1,0 +1,177 @@
+\part{表格和图片}
+\section{插入表格}
+\begin{lstlisting}[style = LaTeX_TeXworks]
+\usepackage{array,multirow}			%表格宏包和行合并宏包
+
+% 定义了三种新的列类型：左对齐、居中对齐和右对齐。这些列类型可以在表格中指定列宽
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% 表格环境
+\begin{table}[H]
+	\centering				% 表格整体居中
+	\caption{\SimHei\zihao{-5}一张随意画的\LaTeX 表格}	% 表格的标题
+	\begin{tabular}{|C{2cm}|C{2cm}|C{2cm}|C{2cm}|} 	% 设置四列表格，每一列两厘米宽
+		\hline										% 添加横线
+		(0,0) & \multicolumn{2}{c|}{row 0} & ~ \\ 	% 列合并
+		\hline
+		\multirow{2}{*}{column 0} 					% 行合并
+		& \multicolumn{2}{c|}{\multirow{2}*{center}} & ~ \\ 
+		\cline{4-4}									% 在指定位置添加横线	
+		~ & \multicolumn{2}{c|}{} & ~ \\ 
+		\hline
+		~ & ~ & ~ & ~ \\ \hline
+	\end{tabular}
+\end{table}
+\end{lstlisting}
+该表格效果长这样：
+% 表格环境
+\begin{table}[H]
+	\centering				% 表格整体居中
+	\caption{\Hei\zihao{-5}一张随意画的\LaTeX 表格}	% 表格的标题
+	\begin{tabular}{|C{2cm}|C{2cm}|C{2cm}|C{2cm}|} 	% 设置四列表格，每一列两厘米宽
+		\hline										% 添加横线
+		(0,0) & \multicolumn{2}{c|}{row 0} & ~ \\ 	% 列合并
+		\hline
+		\multirow{2}{*}{column 0} 					% 行合并
+		& \multicolumn{2}{c|}{\multirow{2}*{center}} & ~ \\ 
+		\cline{4-4}									% 在指定位置添加横线	
+		~ & \multicolumn{2}{c|}{} & ~ \\ 
+		\hline
+		~ & ~ & ~ & ~ \\ \hline
+	\end{tabular}
+\end{table}
+
+下面是一段三线表长表的示例：
+\begin{lstlisting}[style = LaTeX_TeXworks]
+\usepackage{longtable}
+\caption{文本文字样式控制序列}\label{table::font_control_sequences}
+\begin{center}
+	\begin{longtable}{C{2.5cm}C{2.5cm}C{4cm}C{2cm}C{1.5cm}}
+		\hline
+		宏 & 功能 & 参数 & 效果 & 来源 \\
+		\hline
+		\addbs{textup} & 无效果字体 & \{要显示的文字\} & \textup{text} & \LaTeX \\
+		\addbs{textit} & 意大利斜体字体 & \{要显示的文字\} & \textit{text} & \LaTeX \\
+		\addbs{textsl} & Slanted斜体字体 & \{要显示的文字\} & \textsl{text} & \LaTeX \\
+		\addbs{textsc} & 小写转大写后输出 & \{要显示的文字\} & \textsc{text} & \LaTeX \\
+		\addbs{textrm} & 罗马字体族 & \{要显示的文字\} & \textrm{text} & \LaTeX \\
+		\addbs{textsf} & 无衬字体 & \{要显示的文字\} & \textsf{text} & \LaTeX \\
+		\addbs{texttt} & 打印字体 & \{要显示的文字\} & \texttt{text} & \LaTeX \\
+		\addbs{newfontfamily} & 指定字体格式 & \{控制序列\}\{字体名\} & \newfontfamily{\fontcn}{Courier New} \fontcn N/A & fontspec \\
+		\addbs{setCJKfamilyfont} & 导入中日韩（CJK）字体，赋予一个别名 & \{别名\}\{字体名\} & \setCJKfamilyfont{kf}{楷体} N/A & ctex \\
+		\addbs{CJKfamily} & 设置中日韩（CJK）语言环境字体 & \{字体名称\} & \CJKfamily{kf} 文字 & ctex \\
+		\addbs{textbf} & 文字加粗 & \{要显示的文字\} & \textbf{text 文字} & \LaTeX \\
+		\addbs{underline} & 添加下划线 & \{要显示的文字\} & \underline{text 文字} & \LaTeX \\
+		\addbs{textcolor} & 彩色文字 & [色彩空间]\{浮点数色彩值\}\{要显示的文字\} & \textcolor[rgb]{1, 0, 0}{text 文字} & xcolor \\
+		\addbs{tiny} & 最小的预设字号 & N/A & \tiny text 文字 & \LaTeX \\
+		\addbs{footnotesize} & 脚注标准字号 & N/A & \footnotesize text 文字 & \LaTeX \\
+		\addbs{small} & 小号字体 & N/A & \small text 文字 & \LaTeX \\
+		\addbs{normalsize} & 默认字号 & N/A & \normalsize text 文字 & \LaTeX \\
+		\addbs{large} & 较大的字号 & N/A & \large test 文字 & \LaTeX \\
+		\addbs{Large} & 介于large与LARGE间的字号 & N/A & \Large text 文字 & \LaTeX \\
+		\addbs{LARGE} & 介于Large与huge间的字号 & N/A & \LARGE text 文字 & \LaTeX \\
+		\addbs{huge} & 介于LARGE与Huge间的字号 & N/A & \huge text 文字 & \LaTeX \\
+		\addbs{Huge} & 最大的预设字号 & N/A & \Huge text 文字 & \LaTeX \\
+		\addbs{zihao} & 中国人习惯的汉字字号 & \{字号\} & \zihao{3} 三号字 & \LaTeX \\
+		\hline
+	\end{longtable}
+\end{center}
+\end{lstlisting}
+
+\begin{center}
+	\begin{longtable}{C{2.5cm}C{2.5cm}C{4cm}C{2cm}C{1.5cm}}
+		\hline
+		宏 & 功能 & 参数 & 效果 & 来源 \\
+		\hline
+		\addbs{textup} & 无效果字体 & \{要显示的文字\} & \textup{text} & \LaTeX \\
+		\addbs{textit} & 意大利斜体字体 & \{要显示的文字\} & \textit{text} & \LaTeX \\
+		\addbs{textsl} & Slanted斜体字体 & \{要显示的文字\} & \textsl{text} & \LaTeX \\
+		\addbs{textsc} & 小写转大写后输出 & \{要显示的文字\} & \textsc{text} & \LaTeX \\
+		\addbs{textrm} & 罗马字体族 & \{要显示的文字\} & \textrm{text} & \LaTeX \\
+		\addbs{textsf} & 无衬字体 & \{要显示的文字\} & \textsf{text} & \LaTeX \\
+		\addbs{texttt} & 打印字体 & \{要显示的文字\} & \texttt{text} & \LaTeX \\
+		\addbs{newfontfamily} & 指定字体格式 & \{控制序列\}\{字体名\} & \newfontfamily{\fontcn}{Courier New} \fontcn N/A & fontspec \\
+		\addbs{setCJKfamilyfont} & 导入中日韩（CJK）字体，赋予一个别名 & \{别名\}\{字体名\} & \setCJKfamilyfont{kf}{楷体} N/A & ctex \\
+		\addbs{CJKfamily} & 设置中日韩（CJK）语言环境字体 & \{字体名称\} & \CJKfamily{kf} 文字 & ctex \\
+		\addbs{textbf} & 文字加粗 & \{要显示的文字\} & \textbf{text 文字} & \LaTeX \\
+		\addbs{underline} & 添加下划线 & \{要显示的文字\} & \underline{text 文字} & \LaTeX \\
+		\addbs{textcolor} & 彩色文字 & [色彩空间]\{浮点数色彩值\}\{要显示的文字\} & \textcolor[rgb]{1, 0, 0}{text 文字} & xcolor \\
+		\addbs{tiny} & 最小的预设字号 & N/A & \tiny text 文字 & \LaTeX \\
+		\addbs{footnotesize} & 脚注标准字号 & N/A & \footnotesize text 文字 & \LaTeX \\
+		\addbs{small} & 小号字体 & N/A & \small text 文字 & \LaTeX \\
+		\addbs{normalsize} & 默认字号 & N/A & \normalsize text 文字 & \LaTeX \\
+		\addbs{large} & 较大的字号 & N/A & \large test 文字 & \LaTeX \\
+		\addbs{Large} & 介于large与LARGE间的字号 & N/A & \Large text 文字 & \LaTeX \\
+		\addbs{LARGE} & 介于Large与huge间的字号 & N/A & \LARGE text 文字 & \LaTeX \\
+		\addbs{huge} & 介于LARGE与Huge间的字号 & N/A & \huge text 文字 & \LaTeX \\
+		\addbs{Huge} & 最大的预设字号 & N/A & \Huge text 文字 & \LaTeX \\
+		\addbs{zihao} & 中国人习惯的汉字字号 & \{字号\} & \zihao{3} 三号字 & \LaTeX \\
+		\hline
+	\end{longtable}
+\end{center}
+
+下面是一段短的三线表的代码：
+\begin{lstlisting}[style = LaTeX_TeXworks]
+\begin{figure}[h]
+	\centering
+	\begin{tabular}{cc}
+		\hline
+		宏 & 内容 \\
+		\hline
+		\addbs{alph} & 小写字母 \\
+		\addbs{Alph} & 大写字母 \\
+		\addbs{arabic} & 阿拉伯字母 \\
+		\addbs{roman} & 小写罗马数字 \\
+		\addbs{Roman} & 大写罗马数字 \\
+		\hline
+	\end{tabular}
+\end{figure}
+\end{lstlisting}
+\begin{figure}[h]
+	\centering
+	\begin{tabular}{cc}
+		\hline
+		宏 & 内容 \\
+		\hline
+		\addbs{alph} & 小写字母 \\
+		\addbs{Alph} & 大写字母 \\
+		\addbs{arabic} & 阿拉伯字母 \\
+		\addbs{roman} & 小写罗马数字 \\
+		\addbs{Roman} & 大写罗马数字 \\
+		\hline
+	\end{tabular}
+\end{figure}
+\section{插入图片}
+\begin{lstlisting}[style = LaTeX_TeXworks]
+\usepackage{graphicx}
+% 插入单一图片
+\begin{figure}[H]
+	\centering
+	\caption{logo}\label{figure::logo}
+	\includegraphics[height = 8mm, width = 8mm]{figure/logo.png}		% 插入本地图片
+\end{figure}
+
+% 插入存在子图的图片
+\usepackage{subcaption}					% 提供了对子标题的支持
+\begin{figure}[H]
+	\centering							% 图片居中
+	\caption{两个logos}\label{figure::two_logos}	% 图片总标题（还设置了标签，便于跳转）
+	\subcaptionbox{GNU logo\label{figure::GNUlogo}}{\includegraphics[height = 3cm, width = 3cm]{figure/GNU_logo.png}}					% 创建了一个子标题盒子，在里面插入了子标题和内容
+	\subcaptionbox{Freedo\label{figure::Freedo}}{\includegraphics[height = 10cm, width = 10cm]{figure/Freedo.png}}
+\end{figure}
+\end{lstlisting}
+
+\begin{figure}[H]
+	\centering
+	\caption{单一图片}\label{figure::logo}
+	\includegraphics[height = 8mm, width = 8mm]{figure/logo.png}		% 插入本地图片
+\end{figure}
+
+\begin{figure}[H]
+	\centering							% 图片居中
+	\caption{含子图图片}\label{figure::two_logos}	% 图片总标题（还设置了标签，便于跳转）
+	\subcaptionbox{GNU logo\label{figure::GNUlogo}}{\includegraphics[height = 3cm, width = 3cm]{figure/GNU_logo.png}}					% 创建了一个子标题盒子，在里面插入了子标题和内容
+	\subcaptionbox{Freedo\label{figure::Freedo}}{\includegraphics[height = 10cm, width = 10cm]{figure/Freedo.png}}
+\end{figure}

@@ -1,0 +1,30 @@
+\definecolor{bgcolor_gray}{rgb}{0.9, 0.9, 0.9}
+\definecolor{deep_green}{rgb}{0, 0.5, 0}
+\lstdefinestyle{LaTeX_TeXworks}{
+	language=[LaTeX]TeX,
+	basicstyle=\ttfamily\small, % 设置基本字体样式
+	backgroundcolor=\color{gray!10}, % 设置背景颜色
+	morekeywords = {includegraphics, subcaptionbox, multirow},
+	keywordstyle=\color{blue}, % 设置关键字颜色
+	commentstyle=\color{green!50!black}, % 设置注释颜色
+	stringstyle=\color{orange}, % 设置字符串颜色
+	numbers=left, % 行号显示在左侧
+	numberstyle=\tiny\color{gray}, % 设置行号字体样式和颜色
+	stepnumber=1, % 行号递增步长
+	numbersep=8pt, % 行号与代码之间的距离
+	tabsize=4, % 制表符大小
+	showspaces=false, % 是否显示空格
+	showstringspaces=false, % 是否显示字符串中的空格
+	captionpos=b, % 标题位置：底部
+	breaklines=true, % 自动换行
+	frame=tb, % 框架位置：上下
+	framerule=0pt, % 框架宽度
+	frameround=ftft, % 框架边角形状：上下左右
+	framesep=3pt, % 框架与代码之间的距离
+	aboveskip=10pt, % 代码与上方内容的距离
+	belowskip=10pt, % 代码与下方内容的距离
+	showtabs = false,
+	extendedchars = true,
+	inputencoding = utf8,
+	escapeinside={(@*}{*@)}
+}
