@@ -1,0 +1,28 @@
+\contentsline {part}{I\hspace {1em}认识\LaTeX }{1}{part.1}%
+\contentsline {section}{\numberline {1.1}\LaTeX 的起源}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}\LaTeX 的优势与劣势}{1}{section.1.2}%
+\contentsline {part}{II\hspace {1em}文档结构介绍}{3}{part.2}%
+\contentsline {part}{III\hspace {1em}常见宏包介绍}{4}{part.3}%
+\contentsline {part}{IV\hspace {1em}常见环境介绍}{6}{part.4}%
+\contentsline {part}{V\hspace {1em}页面与页眉页脚}{8}{part.5}%
+\contentsline {section}{\numberline {5.1}页面设置}{8}{section.5.1}%
+\contentsline {section}{\numberline {5.2}页眉页脚设置}{8}{section.5.2}%
+\contentsline {part}{VI\hspace {1em}文字与段落}{9}{part.6}%
+\contentsline {section}{\numberline {6.1}全局字体类型设置}{9}{section.6.1}%
+\contentsline {section}{\numberline {6.2}全局字号设置}{10}{section.6.2}%
+\contentsline {section}{\numberline {6.3}全局段落格式设置}{10}{section.6.3}%
+\contentsline {section}{\numberline {6.4}局部设置}{11}{section.6.4}%
+\contentsline {section}{\numberline {6.5}换行操作}{11}{section.6.5}%
+\contentsline {section}{\numberline {6.6}对齐方式}{11}{section.6.6}%
+\contentsline {part}{VII\hspace {1em}表格和图片}{12}{part.7}%
+\contentsline {section}{\numberline {7.1}插入表格}{12}{section.7.1}%
+\contentsline {section}{\numberline {7.2}插入图片}{16}{section.7.2}%
+\contentsline {part}{VIII\hspace {1em}代码块插入}{18}{part.8}%
+\contentsline {part}{IX\hspace {1em}目录、标题和标签}{21}{part.9}%
+\contentsline {section}{\numberline {9.1}目录设置}{21}{section.9.1}%
+\contentsline {section}{\numberline {9.2}标题设置}{21}{section.9.2}%
+\contentsline {section}{\numberline {9.3}标签与跳转}{22}{section.9.3}%
+\contentsline {part}{X\hspace {1em}序列的插入}{23}{part.10}%
+\contentsline {part}{XI\hspace {1em}公式编辑}{24}{part.11}%
+\contentsline {part}{XII\hspace {1em}参考文献插入}{25}{part.12}%
+\contentsfinish 
